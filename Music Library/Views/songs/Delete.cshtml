@@ -1,0 +1,64 @@
+﻿@model Music_Library.Models.songs
+
+@{
+    ViewBag.Title = "Удаление";
+}
+
+<h2>Удаление</h2>
+
+<h3>Вы уверены, что хотите удалить композицию из своей медиатеки?</h3>
+<div>
+    <h4>songs</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.song_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.song_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.album_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.album_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.duration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.duration)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.song_cover)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.song_cover)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.users.user_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.users.user_name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

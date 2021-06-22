@@ -1,0 +1,31 @@
+﻿@model Music_Library.Models.users
+@{
+    ViewBag.Title = "Вход";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="card custom-card">
+        <div class="card-header bg-primary text-white">
+            <h3>Login Form</h3>
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                Имя пользователя
+                @Html.TextBoxFor(m => m.user_name, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.user_name)
+            </div>
+            <div class="form-group">
+                Пароль
+                @Html.PasswordFor(m => m.user_password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.user_password)
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary rounded-0">Login</button>
+                @Html.ActionLink("New User", "Register")
+            </div>
+
+        </div>
+    </div>
+}  

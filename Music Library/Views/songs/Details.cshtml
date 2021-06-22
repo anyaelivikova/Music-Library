@@ -1,0 +1,58 @@
+﻿@model Music_Library.Models.songs
+
+@{
+    ViewBag.Title = "Детали";
+}
+
+<h2>Детали</h2>
+
+<div>
+    <h4>songs</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.song_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.song_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.album_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.album_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.duration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.duration)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.song_cover)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.song_cover)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.users.user_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.users.user_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Редактирование", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Вернуться к списку", "Index")
+</p>

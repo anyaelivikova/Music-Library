@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Music_Library.Models.songs>
+
+@{
+    ViewBag.Title = "Композиции";
+}
+
+<h2>Композиции</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Название
+        </th>
+        <th>
+            Альбом
+        </th>
+        <th>
+            Длительность
+        </th>
+        <th>
+            Обложка
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.song_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.album_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.duration)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.song_cover)
+        </td>
+        <td>
+            @Html.ActionLink("Редактировать", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Детали", "Details", new { id=item.id }) |
+            @Html.ActionLink("Удалить", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
